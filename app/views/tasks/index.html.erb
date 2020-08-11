@@ -1,0 +1,23 @@
+<h1>👷 Task Manager</h1>
+
+<h2>🥺 My tasks list</h2>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <li>✅ <%= link_to task.title, task_path(task.id) %> ----> <%= link_to "🗑",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+    <% else %>
+      <li>❌ <%= link_to task.title, task_path(task.id) %> ----> <%= link_to "🗑",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to '🆕 Create a new task', tasks_new_path, class: "link" %>
+
+

@@ -1,0 +1,13 @@
+<h1>👷 Task Manager</h1>
+
+<%= link_to '🔙 Edit task', task_edit_path %>
+
+<h2><%= @task.title %></h2>
+<h3><em><%= @task.details %></em></h3>
+<% if @task.completed %>
+  <p>🍻 😃 👏 <strong>This task is done! Good job Michel!</strong></p>
+<% else %>
+  <p>⚠️ ⚠️ ⚠️ <strong>This is not done! Go back to work!!</strong></p>
+<% end %>
+
+<%= link_to '🔙 Back to list', tasks_path %>
